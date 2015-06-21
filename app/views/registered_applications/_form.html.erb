@@ -15,7 +15,11 @@
       <%= form_group_tag(registered_application.errors[:name]) do %>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
+        <% end %>
 
+        <%= form_group_tag(registered_application.errors[:url]) do %>
+        <%= f.label :url %>
+        <%= f.text_field :url, class: 'form-control' %>
       <% end %>
 
       <div class="form-group">

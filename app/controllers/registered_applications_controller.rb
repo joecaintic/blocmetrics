@@ -4,10 +4,10 @@ class RegisteredApplicationsController < ApplicationController
     @registered_application = @user.registered_applications.build(registered_application_params)
     authorize @registered_application
     if @registered_application.save
-      flash[:notice] = "Registered Application was saved"
+      flash[:notice] = "Application was registered"
       redirect_to [@user]
     else
-      flash[:notice] = "There was an error saving your application"
+      flash[:notice] = "There was an error registering your application"
       render :new
     end
   end
