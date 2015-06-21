@@ -8,8 +8,5 @@ class RegisteredApplicationPolicy < ApplicationPolicy
     create?
   end
 
-  def destroy?
-    user.present? && record.user=user?
-  end
 
 end

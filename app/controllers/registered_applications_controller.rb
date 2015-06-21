@@ -19,6 +19,19 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:user_id])
+    @registered_application = @user.registered_applications.find(params[:id])
+    authorize @registered_application
+      if @registered_application.destroy
+        flash[:notice] = "Application was deleted successfully." 
+      else
+        flash[:error] = "There was an error deleting the application."
+      end
+
+      respond_to do |format|
+       format.html
+       format.js
+      end
   end
 
   private

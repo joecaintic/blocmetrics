@@ -1,7 +1,10 @@
-<% @registered_applications.each do |registered_application| %>
-  <div class = "media-body">
-    <h4 class="media-heading">
-      <%= link_to (registered_application.name), [registered_application.user, registered_application] %>
-    </h4>
-  </div> 
+<%= content_tag :div, class: 'media', id: "registered_application-#{registered_application.id}" do %>
+  <div class = "row">
+    <div class="col-md-8">
+      <p><%= registered_application.name %>
+      <% if policy(registered_application).destroy? %>
+        <small><%= link_to "Delete", [registered_application.user, registered_application], method: :delete, remote: true %></small> </p>
+      <% end %>
+    </div>
+  </div>
 <% end %>
