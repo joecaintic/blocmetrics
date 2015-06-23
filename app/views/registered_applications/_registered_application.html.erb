@@ -1,17 +1,10 @@
 <%= content_tag :div, class: 'media', id: "registered_application-#{registered_application.id}" do %>
-  <div class = "row">
-    <div class="col-md-8">
+  
       <p><b>Name:</b><%= registered_application.name %> 
-    </div>
-    <div class="col-md-8"> 
-        <b>URL:</b><%= registered_application.url %>
-    </div>
-    <div class="col-md-8"> 
+        <br/>
+      <b>URL:</b><%= link_to registered_application.url %>
       <% if policy(registered_application).destroy? %>
+        <br/>
         <small><%= link_to "Delete", [registered_application.user, registered_application], method: :delete, remote: true %></small> </p>
       <% end %>
-    </div>
-  </div>
-</div>
-</div>
 <% end %>

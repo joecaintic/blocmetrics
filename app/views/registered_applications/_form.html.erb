@@ -18,7 +18,7 @@
         <% end %>
 
         <%= form_group_tag(registered_application.errors[:url]) do %>
-        <%= f.label :url %>
+        <%= f.label :url, "URL" %> 
         <%= f.text_field :url, class: 'form-control' %>
       <% end %>
 
