@@ -3,6 +3,8 @@
       <p><b>Name:</b><%= registered_application.name %> 
         <br/>
       <b>URL:</b><%= link_to registered_application.url %>
+      <br/>
+        <%=pluralize(registered_application.events.count, 'event') %>
       <% if policy(registered_application).destroy? %>
         <br/>
         <small><%= link_to "Delete", [registered_application.user, registered_application], method: :delete, remote: true %></small> </p>

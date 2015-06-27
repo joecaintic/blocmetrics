@@ -13,6 +13,7 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def show
+    
   end
 
   def update

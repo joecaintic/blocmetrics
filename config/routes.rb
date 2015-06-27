@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :registered_applications, only: [:create, :show, :destroy]
   end
 
+  resources :registered_applications do
+    resources :events
+  end
+  
   authenticated :user do
     root :to => 'users#show'
   end
