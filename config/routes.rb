@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     resources :registered_applications, only: [:create, :show, :destroy]
   end
 
-  resources :registered_applications do
-    resources :events
-  end
+  #resources :registered_applications do
+  #  resources :events, only: [:create]
+  #end
   
   authenticated :user do
     root :to => 'users#show'
@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     devise_scope :user do
       get "/" => "devise/sessions#new"
     end
+  end
+
+  namespace :api, defaults: { format: :json } do
+    match 'create_event', to: 'events#create', via: [:options]
+    resources :events, only: [:create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

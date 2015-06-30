@@ -99,6 +99,7 @@ GEM
     pundit (1.0.0)
       activesupport (>= 3.0.0)
     rack (1.6.2)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.1)
@@ -179,6 +180,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pundit
+  rack-cors
   rails (= 4.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
