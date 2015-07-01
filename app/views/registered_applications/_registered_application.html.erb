@@ -4,7 +4,8 @@
         <br/>
       <b>URL:</b><%= link_to registered_application.url %>
       <br/>
-        <%=pluralize(registered_application.events.count, 'event') %>
+      <%= pie_chart registered_application.events.group(:name).count %>
+      <%= line_chart registered_application.events.group_by_day(:created_at).count %>
       <% if policy(registered_application).destroy? %>
         <br/>
         <small><%= link_to "Delete", [registered_application.user, registered_application], method: :delete, remote: true %></small> </p>

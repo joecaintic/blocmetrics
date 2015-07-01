@@ -47,7 +47,7 @@ registered_application = RegisteredApplication.first
 registered_application.update_attributes!(
   user: User.first,
   name: 'User Test',
-  url: 'www.test.com'
+  url: 'http://www.test.com'
   )
 
 event = Event.first
